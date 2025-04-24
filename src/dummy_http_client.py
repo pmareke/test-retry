@@ -7,7 +7,6 @@ from retry import retry
 
 
 def configurable_retry(exceptions: tuple) -> Callable:
-    """Decorator that uses settings for retry configuration"""
     if os.getenv("PROFILE") == "test":
         return lambda func: func
     return retry(exceptions, tries=5, delay=2)  # type: ignore
