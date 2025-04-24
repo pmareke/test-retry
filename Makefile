@@ -50,11 +50,11 @@ format:  ## Format python code
 
 .PHONY: slow-test
 slow-test: ## Run slow tests.
-	PYTHONPATH=. uv run pytest -x -ra tests/
+	uv run pytest -x -ra tests/
 
 .PHONY: fast-test
 fast-test: ## Run fast tests.
-	PYTHONPATH=. PROFILE=test uv run pytest -x -ra tests/
+	PROFILE=test uv run pytest -x -ra tests/
 
 .PHONY: pre-commit
 pre-commit: check-typing check-format fast-test
