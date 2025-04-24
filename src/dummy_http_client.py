@@ -14,15 +14,7 @@ class DummyHttpClient:
 
     @retry_unless_test((DummyHttpClientException,))
     def call(self) -> None:
-        response = self._requests.get("https://httpbun.com/mix/s=500")
+        response = self._requests.get("https://pmareke.com")
 
         if response.status_code == INTERNAL_SERVER_ERROR:
             raise DummyHttpClientException("Internal server error")
-
-
-class DummyHttpClientFactory:
-    @staticmethod
-    def make() -> DummyHttpClient:
-        import requests
-
-        return DummyHttpClient(requests)
