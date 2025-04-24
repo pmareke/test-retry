@@ -4,7 +4,7 @@ make slow-test
 PYTHONPATH=. uv run pytest -x -ra tests/
 ========================= test session starts =========================
 tests/test_dummy_http_client.py .                                [100%]
-========================= 1 passed in 5.93s ===========================
+========================= 1 passed in 4.04s ===========================
 ```
 
 ```sh
