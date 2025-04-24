@@ -4,7 +4,7 @@ from src.dummy_http_client import DummyHttpClientException, DummyHttpClientFacto
 
 
 class TestDummyHttpClient:
-    def test_call(self) -> None:
+    def test_raise_exception_when_calling_the_api_returns_an_error(self) -> None:
         http_client = DummyHttpClientFactory.make()
 
         expect(lambda: http_client.call()).to(
